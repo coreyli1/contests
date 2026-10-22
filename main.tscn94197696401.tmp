@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://f7g2omgrjmm"]
+
+[ext_resource type="Script" uid="uid://mn1tswoje67" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://baj0letehhcbo" path="res://pokemon/pokemon.tscn" id="1_ig7tw"]
+
+[node name="main" type="Node2D" unique_id=1350547697]
+script = ExtResource("1_0xm2m")
+
+[node name="Pokemon" parent="." unique_id=703955257 instance=ExtResource("1_ig7tw")]
+position = Vector2(128, 113)
+
+[node name="Control" type="Control" parent="." unique_id=909558126]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Moves" type="Button" parent="Control" unique_id=509946840]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 448.0
+offset_right = 348.0
+offset_bottom = 511.0
+text = "Show Moves"
+
+[connection signal="pressed" from="Control/Moves" to="." method="_on_moves_pressed"]

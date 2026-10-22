@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://baj0letehhcbo"]
+
+[ext_resource type="Script" uid="uid://c2vhfgt0hd5hq" path="res://pokemon/pokemon.gd" id="1_bp5l7"]
+[ext_resource type="Texture2D" uid="uid://ubngea14khip" path="res://icon.svg" id="2_mp370"]
+
+[node name="Pokemon" type="Node2D" unique_id=703955257]
+script = ExtResource("1_bp5l7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=341090875]
+texture = ExtResource("2_mp370")
+
+[node name="Control" type="Control" parent="." unique_id=121628099]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PokeName" type="Label" parent="Control" unique_id=270617178]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -1.0
+offset_top = -26.0
+offset_right = 73.0
+offset_bottom = -3.0
+
+[node name="MovesGroup" type="GridContainer" parent="Control" unique_id=174013279]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.425
+anchor_top = 0.37500003
+anchor_right = 0.425
+anchor_bottom = 0.37500003
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Move 1" type="Button" parent="Control/MovesGroup" unique_id=381631840]
+layout_mode = 2
+text = "Growl"
+
+[node name="Move 2" type="Button" parent="Control/MovesGroup" unique_id=767157659]
+layout_mode = 2
+text = "Sweet Kiss"
+
+[node name="Move 3" type="Button" parent="Control/MovesGroup" unique_id=799868396]
+layout_mode = 2
+text = "Bite"
+
+[node name="Move 4" type="Button" parent="Control/MovesGroup" unique_id=2044562349]
+layout_mode = 2
+text = "Explosion"
