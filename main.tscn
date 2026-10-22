@@ -7,20 +7,35 @@
 script = ExtResource("1_0xm2m")
 
 [node name="Pokemon" parent="." unique_id=703955257 instance=ExtResource("1_ig7tw")]
-position = Vector2(128, 113)
+position = Vector2(102, 111)
 
-[node name="Control" type="Control" parent="." unique_id=909558126]
+[node name="Move UI" type="Control" parent="." unique_id=909558126]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Moves" type="Button" parent="Control" unique_id=509946840]
+[node name="Show Moves" type="Button" parent="Move UI" unique_id=509946840]
 layout_mode = 0
-offset_left = 238.0
-offset_top = 448.0
-offset_right = 348.0
-offset_bottom = 511.0
+offset_left = 34.0
+offset_top = 503.0
+offset_right = 144.0
+offset_bottom = 566.0
 text = "Show Moves"
 
-[connection signal="pressed" from="Control/Moves" to="." method="_on_moves_pressed"]
+[node name="Apply Moves" type="Button" parent="Move UI" unique_id=564412650]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 505.0
+offset_right = 300.0
+offset_bottom = 566.0
+text = "Apply Move"
+
+[node name="Hearts" type="HBoxContainer" parent="." unique_id=635750713]
+offset_left = 221.0
+offset_top = 46.0
+offset_right = 261.0
+offset_bottom = 86.0
+
+[connection signal="pressed" from="Move UI/Show Moves" to="." method="_on_moves_pressed"]
+[connection signal="pressed" from="Move UI/Apply Moves" to="." method="_on_apply_moves_pressed"]

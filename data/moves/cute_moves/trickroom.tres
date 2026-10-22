@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="move" format=3 uid="uid://cxd4wnmxymy7x"]
+
+[ext_resource type="Script" uid="uid://cjdksxtvcs2fh" path="res://data/moves/move.gd" id="1_tpsof"]
+
+[resource]
+script = ExtResource("1_tpsof")
+name = "Trick Room"
+metadata/_custom_type_script = "uid://cjdksxtvcs2fh"

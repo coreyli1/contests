@@ -1,10 +1,16 @@
 [gd_scene format=3 uid="uid://baj0letehhcbo"]
 
 [ext_resource type="Script" uid="uid://c2vhfgt0hd5hq" path="res://pokemon/pokemon.gd" id="1_bp5l7"]
+[ext_resource type="Script" uid="uid://cjdksxtvcs2fh" path="res://data/moves/move.gd" id="2_54ski"]
 [ext_resource type="Texture2D" uid="uid://ubngea14khip" path="res://icon.svg" id="2_mp370"]
+[ext_resource type="Resource" uid="uid://dst1b5b1t0gff" path="res://data/moves/cute_moves/bite.tres" id="3_y48cr"]
+[ext_resource type="Resource" uid="uid://duvo4nyxr0vg" path="res://data/moves/cute_moves/growl.tres" id="4_tksi6"]
+[ext_resource type="Resource" uid="uid://brnr1yw3asq7s" path="res://data/moves/cute_moves/selfdestruct.tres" id="5_e0f7o"]
+[ext_resource type="Resource" uid="uid://cxd4wnmxymy7x" path="res://data/moves/cute_moves/trickroom.tres" id="6_3alap"]
 
 [node name="Pokemon" type="Node2D" unique_id=703955257]
 script = ExtResource("1_bp5l7")
+moves = Array[ExtResource("2_54ski")]([ExtResource("3_y48cr"), ExtResource("4_tksi6"), ExtResource("5_e0f7o"), ExtResource("6_3alap")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=341090875]
 texture = ExtResource("2_mp370")
@@ -49,3 +55,8 @@ text = "Bite"
 [node name="Move 4" type="Button" parent="Control/MovesGroup" unique_id=2044562349]
 layout_mode = 2
 text = "Explosion"
+
+[connection signal="pressed" from="Control/MovesGroup/Move 1" to="." method="_on_move_1_pressed"]
+[connection signal="pressed" from="Control/MovesGroup/Move 2" to="." method="_on_move_2_pressed"]
+[connection signal="pressed" from="Control/MovesGroup/Move 3" to="." method="_on_move_3_pressed"]
+[connection signal="pressed" from="Control/MovesGroup/Move 4" to="." method="_on_move_4_pressed"]

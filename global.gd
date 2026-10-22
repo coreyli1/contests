@@ -1,6 +1,7 @@
 extends Node
 var pokemon
 var current_pokemon
+var current_move
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
