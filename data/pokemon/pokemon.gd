@@ -45,13 +45,7 @@ func set_variables() -> void:
 	poke_name.text = pokemon_name
 	
 	#get moves and add it to each button
-	var count = 0
-	for m in moves_group.get_children():
-		print(m)
-		print(moves)
-		print(moves[count])
-		m.text = moves[count]
-		count+=1	
+
 	if current:
 		poke_name.add_theme_color_override("font_color", Color(0.255, 0.607, 0.288, 1.0))
 		pass

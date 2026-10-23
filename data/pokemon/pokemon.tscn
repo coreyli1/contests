@@ -1,58 +1,31 @@
 [gd_scene format=3 uid="uid://baj0letehhcbo"]
 
 [ext_resource type="Script" uid="uid://c2vhfgt0hd5hq" path="res://data/pokemon/pokemon.gd" id="1_bp5l7"]
-[ext_resource type="Script" uid="uid://cjdksxtvcs2fh" path="res://data/moves/move.gd" id="2_54ski"]
-[ext_resource type="Resource" uid="uid://dst1b5b1t0gff" path="res://data/moves/cute_moves/bite.tres" id="3_y48cr"]
-[ext_resource type="Resource" uid="uid://duvo4nyxr0vg" path="res://data/moves/cute_moves/growl.tres" id="4_tksi6"]
-[ext_resource type="Resource" uid="uid://brnr1yw3asq7s" path="res://data/moves/cute_moves/selfdestruct.tres" id="5_e0f7o"]
-[ext_resource type="Resource" uid="uid://cxd4wnmxymy7x" path="res://data/moves/cute_moves/trickroom.tres" id="6_3alap"]
 
 [node name="Pokemon" type="Node2D" unique_id=703955257]
 script = ExtResource("1_bp5l7")
-moves = Array[ExtResource("2_54ski")]([ExtResource("3_y48cr"), ExtResource("4_tksi6"), ExtResource("5_e0f7o"), ExtResource("6_3alap")])
 
 [node name="Control" type="Control" parent="." unique_id=121628099]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 313.0
+offset_bottom = 25.0
 
 [node name="PokeName" type="Label" parent="Control" unique_id=270617178]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = -1.0
-offset_top = -26.0
-offset_right = 73.0
-offset_bottom = -3.0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 76.0
+offset_bottom = 24.0
+text = "Pokemon"
 
-[node name="MovesGroup" type="GridContainer" parent="Control" unique_id=174013279]
-visible = false
+[node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=448945218]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.425
-anchor_top = 0.37500003
-anchor_right = 0.425
-anchor_bottom = 0.37500003
-offset_right = 90.0
-offset_bottom = 136.0
-
-[node name="Move 1" type="Button" parent="Control/MovesGroup" unique_id=381631840]
-layout_mode = 2
-text = "Growl"
-
-[node name="Move 2" type="Button" parent="Control/MovesGroup" unique_id=767157659]
-layout_mode = 2
-text = "Sweet Kiss"
-
-[node name="Move 3" type="Button" parent="Control/MovesGroup" unique_id=799868396]
-layout_mode = 2
-text = "Bite"
-
-[node name="Move 4" type="Button" parent="Control/MovesGroup" unique_id=2044562349]
-layout_mode = 2
-text = "Explosion"
-
-[connection signal="pressed" from="Control/MovesGroup/Move 1" to="." method="_on_move_1_pressed"]
-[connection signal="pressed" from="Control/MovesGroup/Move 2" to="." method="_on_move_2_pressed"]
-[connection signal="pressed" from="Control/MovesGroup/Move 3" to="." method="_on_move_3_pressed"]
-[connection signal="pressed" from="Control/MovesGroup/Move 4" to="." method="_on_move_4_pressed"]
+anchor_left = 0.259
+anchor_right = 0.259
+offset_left = -1.0670013
+offset_top = 1.0
+offset_right = 268.93298
+offset_bottom = 24.0

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://f7g2omgrjmm"]
 
 [ext_resource type="Script" uid="uid://mn1tswoje67" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://u3scquwc5myr" path="res://ui/moves.tscn" id="2_0xm2m"]
 
 [node name="main" type="Node2D" unique_id=1350547697]
 script = ExtResource("1_0xm2m")
@@ -13,17 +14,17 @@ offset_bottom = 40.0
 
 [node name="Show Moves" type="Button" parent="Move UI" unique_id=509946840]
 layout_mode = 0
-offset_left = 34.0
-offset_top = 503.0
-offset_right = 144.0
-offset_bottom = 566.0
+offset_left = 98.0
+offset_top = 504.0
+offset_right = 208.0
+offset_bottom = 567.0
 text = "Show Moves"
 
 [node name="Apply Moves" type="Button" parent="Move UI" unique_id=564412650]
 layout_mode = 0
-offset_left = 179.0
+offset_left = 220.0
 offset_top = 505.0
-offset_right = 300.0
+offset_right = 341.0
 offset_bottom = 566.0
 text = "Apply Move"
 
@@ -41,6 +42,12 @@ offset_bottom = 23.0
 
 [node name="TotalPokemon" type="Node2D" parent="." unique_id=777658286]
 position = Vector2(308, 44)
+
+[node name="Moves" parent="." unique_id=1078494440 instance=ExtResource("2_0xm2m")]
+offset_left = 354.0
+offset_top = 441.0
+offset_right = 354.0
+offset_bottom = 441.0
 
 [connection signal="pressed" from="Move UI/Show Moves" to="." method="_on_moves_pressed"]
 [connection signal="pressed" from="Move UI/Apply Moves" to="." method="_on_apply_moves_pressed"]

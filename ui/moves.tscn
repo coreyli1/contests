@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://u3scquwc5myr"]
+
+[ext_resource type="Script" uid="uid://dhpi4lprnn1i5" path="res://ui/moves.gd" id="1_0kysy"]
+
+[node name="Moves" type="Control" unique_id=1078494440]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0kysy")
+
+[node name="MovesGroup" type="GridContainer" parent="." unique_id=1691593694]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+theme_override_constants/v_separation = 1
+
+[node name="Move 1" type="Button" parent="MovesGroup" unique_id=427624493]
+layout_mode = 2
+text = "Move"
+
+[node name="Move 2" type="Button" parent="MovesGroup" unique_id=1955465120]
+layout_mode = 2
+text = "Move"
+
+[node name="Move 3" type="Button" parent="MovesGroup" unique_id=452263651]
+layout_mode = 2
+text = "Move"
+
+[node name="Move 4" type="Button" parent="MovesGroup" unique_id=549089519]
+layout_mode = 2
+text = "Move"
