@@ -1,0 +1,32 @@
+{
+	"mudkip": {
+		"name": "Mudkip",
+		"attribute": "cute",
+		"moves":  ["bite", "growl", "fireblast", "selfdestruct"]		
+	},
+	"diglett":{
+		"name": "Diglett",
+		"attribute": "cute",
+		"moves":  ["bite", "growl", "fireblast", "selfdestruct"]			
+	},
+	"electivire":{
+		"name": "Electivire",
+		"attribute": "cute",
+		"moves":  ["bite", "growl", "fireblast", "selfdestruct"]	
+	},
+	"quilava":{
+		"name": "Quilava",
+		"attribute": "cute",
+		"moves":  ["bite", "growl", "fireblast", "selfdestruct"]	
+	},
+	"ditto":{
+		"name": "Ditto",
+		"attribute": "cute",
+		"moves":  ["bite", "growl", "fireblast", "selfdestruct"]
+	},
+	"empoleon":{
+		"name": "Empoleon",
+		"attribute": "cute",
+		"moves":  ["bite", "growl", "fireblast", "selfdestruct"]
+	}
+}

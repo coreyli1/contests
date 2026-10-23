@@ -1,13 +1,9 @@
 [gd_scene format=3 uid="uid://f7g2omgrjmm"]
 
 [ext_resource type="Script" uid="uid://mn1tswoje67" path="res://main.gd" id="1_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://baj0letehhcbo" path="res://pokemon/pokemon.tscn" id="1_ig7tw"]
 
 [node name="main" type="Node2D" unique_id=1350547697]
 script = ExtResource("1_0xm2m")
-
-[node name="Pokemon" parent="." unique_id=703955257 instance=ExtResource("1_ig7tw")]
-position = Vector2(102, 111)
 
 [node name="Move UI" type="Control" parent="." unique_id=909558126]
 layout_mode = 3
@@ -36,6 +32,15 @@ offset_left = 221.0
 offset_top = 46.0
 offset_right = 261.0
 offset_bottom = 86.0
+
+[node name="Node" type="Node" parent="." unique_id=1862806539]
+
+[node name="GameState" type="Label" parent="." unique_id=538964274]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="TotalPokemon" type="Node2D" parent="." unique_id=777658286]
+position = Vector2(308, 44)
 
 [connection signal="pressed" from="Move UI/Show Moves" to="." method="_on_moves_pressed"]
 [connection signal="pressed" from="Move UI/Apply Moves" to="." method="_on_apply_moves_pressed"]

@@ -1,14 +1,38 @@
 extends Node
-var pokemon
 var current_pokemon
 var current_move
+var enemies: Array[Pokemon]
+
+const MOVES = preload("res://data/moves/moves.json")
+const POKEMON = preload("res://data/pokemon/pokemon.json")
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#print("Moves")
+	#for item in MOVES.data:
+		#print(item)
+		#
+	#print("Pokemon")
+	#for item in POKEMON.data:
+		#print(item)
 	
+	current_pokemon = preload("res://data/pokemon/pokemon.tscn").instantiate()
+	current_pokemon.pokemon_name = POKEMON.data.keys()[0]
+	current_pokemon.attribute = POKEMON.data[POKEMON.data.keys()[0]]["attribute"]
+	current_pokemon.moves.append_array(POKEMON.data[POKEMON.data.keys()[0]]["moves"])
+	current_pokemon.current = true
+	 
+	print(current_pokemon.moves)
+	#will make it random later 
+	for i in range(3):
+		var to_add = preload("res://data/pokemon/pokemon.tscn").instantiate()
+		to_add.pokemon_name = POKEMON.data.keys()[i+1]
+		to_add.attribute = POKEMON.data[POKEMON.data.keys()[i+1]]["attribute"]
+		to_add.moves.append_array(POKEMON.data[POKEMON.data.keys()[i+1]]["moves"])
+		enemies.append(to_add)
+	print(enemies)
+	# get a random seed
+	# use that random seed to select random pokemon
+	# use that random seed to select random moves for pokemon
 	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

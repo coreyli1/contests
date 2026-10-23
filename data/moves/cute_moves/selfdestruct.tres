@@ -5,4 +5,5 @@
 [resource]
 script = ExtResource("1_ihlpp")
 name = "Self Destruct"
+appeal = 8
 metadata/_custom_type_script = "uid://cjdksxtvcs2fh"

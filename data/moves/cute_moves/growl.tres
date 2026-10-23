@@ -5,4 +5,5 @@
 [resource]
 script = ExtResource("1_e5p8o")
 name = "Growl"
+appeal = 3
 metadata/_custom_type_script = "uid://cjdksxtvcs2fh"

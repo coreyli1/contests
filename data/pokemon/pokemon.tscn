@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://baj0letehhcbo"]
 
-[ext_resource type="Script" uid="uid://c2vhfgt0hd5hq" path="res://pokemon/pokemon.gd" id="1_bp5l7"]
+[ext_resource type="Script" uid="uid://c2vhfgt0hd5hq" path="res://data/pokemon/pokemon.gd" id="1_bp5l7"]
 [ext_resource type="Script" uid="uid://cjdksxtvcs2fh" path="res://data/moves/move.gd" id="2_54ski"]
-[ext_resource type="Texture2D" uid="uid://ubngea14khip" path="res://icon.svg" id="2_mp370"]
 [ext_resource type="Resource" uid="uid://dst1b5b1t0gff" path="res://data/moves/cute_moves/bite.tres" id="3_y48cr"]
 [ext_resource type="Resource" uid="uid://duvo4nyxr0vg" path="res://data/moves/cute_moves/growl.tres" id="4_tksi6"]
 [ext_resource type="Resource" uid="uid://brnr1yw3asq7s" path="res://data/moves/cute_moves/selfdestruct.tres" id="5_e0f7o"]
@@ -11,9 +10,6 @@
 [node name="Pokemon" type="Node2D" unique_id=703955257]
 script = ExtResource("1_bp5l7")
 moves = Array[ExtResource("2_54ski")]([ExtResource("3_y48cr"), ExtResource("4_tksi6"), ExtResource("5_e0f7o"), ExtResource("6_3alap")])
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=341090875]
-texture = ExtResource("2_mp370")
 
 [node name="Control" type="Control" parent="." unique_id=121628099]
 layout_mode = 3
@@ -37,8 +33,8 @@ anchor_left = 0.425
 anchor_top = 0.37500003
 anchor_right = 0.425
 anchor_bottom = 0.37500003
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 90.0
+offset_bottom = 136.0
 
 [node name="Move 1" type="Button" parent="Control/MovesGroup" unique_id=381631840]
 layout_mode = 2

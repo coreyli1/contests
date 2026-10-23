@@ -1,0 +1,110 @@
+{
+	"bite":{
+		"name":"Bite",
+		"appeal": 5,
+		"jam": 0,
+		"status": "",
+		"type": 0,
+		"description": "",
+		"rarity": 0		
+	},
+	"growl": {
+		"name":"Growl",
+		"appeal": 5,
+		"jam": 0,
+		"status": "",
+		"type": 0,
+		"description": "",
+		"rarity": 0				
+	},
+	"fireblast": {
+		"name":"Fire Blast",
+		"appeal": 5,
+		"jam": 0,
+		"status": "",
+		"type": 0,
+		"description": "",
+		"rarity": 0				
+	},
+	"selfdestruct": {
+		"name":"Self-Destruct",
+		"appeal": 5,
+		"jam": 0,
+		"status": "",
+		"type": 0,
+		"description": "",
+		"rarity": 0				
+	},
+	"attract": {
+		"name":"Attract",
+		"appeal": 5,
+		"jam": 0,
+		"status": "",
+		"type": 0,
+		"description": "",
+		"rarity": 0				
+	},
+	"bubble": {
+		"name":"Bubble",
+		"appeal": 5,
+		"jam": 0,
+		"status": "",
+		"type": 0,
+		"description": "",
+		"rarity": 0				
+	},
+	"cottonguard": {
+		"name":"Cotton Guard",
+		"appeal": 5,
+		"jam": 0,
+		"status": "",
+		"type": 0,
+		"description": "",
+		"rarity": 0				
+	},
+	"growl": {
+		"name":"Self-Destruct",
+		"appeal": 5,
+		"jam": 0,
+		"status": "",
+		"type": 0,
+		"description": "",
+		"rarity": 0				
+	},
+	"growl": {
+		"name":"Self-Destruct",
+		"appeal": 5,
+		"jam": 0,
+		"status": "",
+		"type": 0,
+		"description": "",
+		"rarity": 0					
+	},
+	"growl": {
+		"name":"Self-Destruct",
+		"appeal": 5,
+		"jam": 0,
+		"status": "",
+		"type": 0,
+		"description": "",
+		"rarity": 0				
+	},
+	"growl": {
+		"name":"Self-Destruct",
+		"appeal": 5,
+		"jam": 0,
+		"status": "",
+		"type": 0,
+		"description": "",
+		"rarity": 0					
+	},
+	"growl": {
+		"name":"Self-Destruct",
+		"appeal": 5,
+		"jam": 0,
+		"status": "",
+		"type": 0,
+		"description": "",
+		"rarity": 0				
+	},
+}
