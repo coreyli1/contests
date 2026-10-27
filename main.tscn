@@ -28,20 +28,12 @@ offset_right = 341.0
 offset_bottom = 566.0
 text = "Apply Move"
 
-[node name="Hearts" type="HBoxContainer" parent="." unique_id=635750713]
-offset_left = 221.0
-offset_top = 46.0
-offset_right = 261.0
-offset_bottom = 86.0
-
-[node name="Node" type="Node" parent="." unique_id=1862806539]
-
 [node name="GameState" type="Label" parent="." unique_id=538964274]
 offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="TotalPokemon" type="Node2D" parent="." unique_id=777658286]
-position = Vector2(308, 44)
+position = Vector2(19, 17)
 
 [node name="Moves" parent="." unique_id=1078494440 instance=ExtResource("2_0xm2m")]
 offset_left = 354.0
@@ -49,5 +41,12 @@ offset_top = 441.0
 offset_right = 354.0
 offset_bottom = 441.0
 
-[connection signal="pressed" from="Move UI/Show Moves" to="." method="_on_moves_pressed"]
+[node name="Button" type="Button" parent="." unique_id=1208690729]
+offset_left = 1004.0
+offset_top = 3.0
+offset_right = 1137.0
+offset_bottom = 34.0
+text = "Increment State"
+
 [connection signal="pressed" from="Move UI/Apply Moves" to="." method="_on_apply_moves_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -20,7 +20,7 @@ offset_right = 76.0
 offset_bottom = 24.0
 text = "Pokemon"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=448945218]
+[node name="Hearts" type="HBoxContainer" parent="Control" unique_id=448945218]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.259
@@ -29,3 +29,9 @@ offset_left = -1.0670013
 offset_top = 1.0
 offset_right = 268.93298
 offset_bottom = 24.0
+
+[node name="MoveUsed" type="Label" parent="Control" unique_id=1580191324]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

@@ -10,7 +10,7 @@
 	},
 	"growl": {
 		"name":"Growl",
-		"appeal": 5,
+		"appeal": 2,
 		"jam": 0,
 		"status": "",
 		"type": 0,
@@ -19,7 +19,7 @@
 	},
 	"fireblast": {
 		"name":"Fire Blast",
-		"appeal": 5,
+		"appeal": 8,
 		"jam": 0,
 		"status": "",
 		"type": 0,
@@ -28,7 +28,7 @@
 	},
 	"selfdestruct": {
 		"name":"Self-Destruct",
-		"appeal": 5,
+		"appeal": 20,
 		"jam": 0,
 		"status": "",
 		"type": 0,

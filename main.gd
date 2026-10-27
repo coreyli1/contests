@@ -2,9 +2,8 @@ extends Node2D
 
 var enemy_pokemon
 var enemy_current_move
-var player_turn: bool = false
+var state: String
 
-@onready var hearts: HBoxContainer = $Hearts
 @onready var game_state: Label = $GameState
 @onready var total_pokemon: Node2D = $TotalPokemon
 
@@ -12,32 +11,40 @@ var player_turn: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:	
+
+
+	#initiate turn structure
+	start_round()
+	#generate_pokemon()	
+	#for i in range(4):
+		#await get_tree().create_timer(3.0).timeout
+		#if Global.turn_order[i].current:
+			#print("Player's Turn")
+			#await $"Move UI/Apply Moves".button_up
+			#pass
+		#else:
+			#print("Player " + str(i+1) + "'s turn" )
+			#await play_ai_turn(Global.turn_order[i], randi()%4)
+
+func start_round():
+	#change the turn order based on specific requirements
+	#random for now
+	Global.turn_order.shuffle()	
+	#rerender the scene
 	generate_pokemon()
+	if Global.turn_order[Global.turn] == Global.current_pokemon:
+		player_turn()
+	else:
+		ai_turn()
+	#play the ai turn
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-
-	pass
 
 
-func _on_moves_pressed() -> void:
-	print("display moves")
-	Global.current_pokemon.display_moves()
+
 func _on_apply_moves_pressed() -> void:
-	print(Global.current_move)
-	generate_hearts()
-#appeal
-func generate_hearts() -> void:
+	Global.current_pokemon.generate_hearts(Global.current_move)
 
-	var xpos = 0
-	
-	for h in Global.current_move.appeal:
-		var heart = Sprite2D.new()
-		heart.apply_scale(Vector2(.5,.5))
-		heart.texture = preload("uid://ubngea14khip")
-		heart.position.x += xpos
-		xpos += 100
-		hearts.add_child(heart)
+#appeal
 
 #add pokemon created in the global scene and sets their variables
 func generate_pokemon() ->void:
@@ -49,14 +56,49 @@ func generate_pokemon() ->void:
 		ypos+= 50
 		
 
-#start out a round of gameplay
-# - round start
-# - display order of pokemon
-# - run through order of pokemon
-# - run through enemy ai of pokemon
-# - display appeals/jam for each pokemon move
-# - calculate the judge meter
-# - run through rounds
-# - finish and calculate score
 
-#different states in the appeal stage
+func _on_button_pressed() -> void:
+	state = "Turn"
+
+func ai_turn() -> void:
+	print(Global.turn_order[Global.turn].pokemon_name, " played")
+	#need to await a signal thats finished
+	play_ai_turn(Global.turn_order[Global.turn], randi()%4)
+	await Global.end_turn
+	transition_turn()
+
+func transition_turn() -> void:
+	print(Global.turn)
+	print(Global.turn_order[Global.turn])
+	Global.turn += 1
+	if Global.turn == 4:
+		end_round()
+		return
+	
+	if Global.turn_order[Global.turn] == Global.current_pokemon:
+		player_turn()
+	else:
+		ai_turn()
+	
+	pass
+
+#poke is the ai pokemon
+#r is to randomly decide the move
+func play_ai_turn(poke: Pokemon, r: int) -> void:
+	poke.generate_hearts(poke.moves[r])
+
+func player_turn():
+	print("Player played a turn")
+	#display move menu
+	#wait for move menu
+	await Global.end_turn
+	transition_turn()
+
+
+func end_round() -> void:
+	print("End round")
+	# calculate score
+	# calculate order priority
+	# increment round counter
+	# call next round
+	pass

@@ -7,11 +7,9 @@ var moves: Array[String]
 var current: bool = false
 
 @onready var poke_name: Label = %PokeName
-@onready var moves_group: GridContainer = $Control/MovesGroup
-@onready var move_1: Button = $"Control/MovesGroup/Move 1"
-@onready var move_2: Button = $"Control/MovesGroup/Move 2"
-@onready var move_3: Button = $"Control/MovesGroup/Move 3"
-@onready var move_4: Button = $"Control/MovesGroup/Move 4"
+@onready var move_used: Label = %MoveUsed
+@onready var hearts: HBoxContainer = $Control/Hearts
+
 
 
 
@@ -40,8 +38,6 @@ func _process(delta: float) -> void:
 
 func set_variables() -> void:
 	#set label to be the pokemon_name
-	print(pokemon_name)
-	print(poke_name)
 	poke_name.text = pokemon_name
 	
 	#get moves and add it to each button
@@ -49,15 +45,22 @@ func set_variables() -> void:
 	if current:
 		poke_name.add_theme_color_override("font_color", Color(0.255, 0.607, 0.288, 1.0))
 		pass
+		
+		
 
-func display_moves() -> void:
-	moves_group.visible = true
+func generate_hearts(m: String) -> void:
 	
-func _on_move_1_pressed() -> void:
-	Global.current_move = moves[0]
-func _on_move_2_pressed() -> void:
-	Global.current_move = moves[1]
-func _on_move_3_pressed() -> void:
-	Global.current_move = moves[2]
-func _on_move_4_pressed() -> void:
-	Global.current_move = moves[3]
+	var xpos = 0
+	for i in Global.move_data[m]["appeal"]:
+		var heart = Sprite2D.new()
+		heart.apply_scale(Vector2(.1,.1))
+		heart.texture = preload("uid://bjb6kjsv4qmye")
+		heart.position.x += xpos
+
+		xpos += 50
+		await get_tree().create_timer(.2).timeout
+		hearts.add_child(heart)
+	
+	
+	#end turn for testing
+	Global.end_turn.emit()
