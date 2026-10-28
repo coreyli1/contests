@@ -25,9 +25,9 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.259
 anchor_right = 0.259
-offset_left = -1.0670013
+offset_left = 18.932999
 offset_top = 1.0
-offset_right = 268.93298
+offset_right = 288.93298
 offset_bottom = 24.0
 
 [node name="MoveUsed" type="Label" parent="Control" unique_id=1580191324]

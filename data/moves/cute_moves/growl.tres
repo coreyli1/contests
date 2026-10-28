@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="move" format=3 uid="uid://duvo4nyxr0vg"]
+[gd_resource type="Resource" script_class="move" format=3 uid="uid://bv1nqwt3rrgah"]
 
 [ext_resource type="Script" uid="uid://cjdksxtvcs2fh" path="res://data/moves/move.gd" id="1_e5p8o"]
 
 [resource]
 script = ExtResource("1_e5p8o")
 name = "Growl"
-appeal = 3
-metadata/_custom_type_script = "uid://cjdksxtvcs2fh"
+appeal = 1
+description = "The appeal works great if used last"

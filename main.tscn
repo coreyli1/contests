@@ -12,41 +12,35 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Show Moves" type="Button" parent="Move UI" unique_id=509946840]
-layout_mode = 0
-offset_left = 98.0
-offset_top = 504.0
-offset_right = 208.0
-offset_bottom = 567.0
-text = "Show Moves"
-
-[node name="Apply Moves" type="Button" parent="Move UI" unique_id=564412650]
-layout_mode = 0
-offset_left = 220.0
-offset_top = 505.0
-offset_right = 341.0
-offset_bottom = 566.0
-text = "Apply Move"
-
-[node name="GameState" type="Label" parent="." unique_id=538964274]
-offset_right = 40.0
-offset_bottom = 23.0
-
-[node name="TotalPokemon" type="Node2D" parent="." unique_id=777658286]
-position = Vector2(19, 17)
-
-[node name="Moves" parent="." unique_id=1078494440 instance=ExtResource("2_0xm2m")]
+[node name="Moves" parent="Move UI" unique_id=1078494440 instance=ExtResource("2_0xm2m")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
 offset_left = 354.0
 offset_top = 441.0
 offset_right = 354.0
 offset_bottom = 441.0
+
+[node name="GameState" type="Label" parent="." unique_id=538964274]
+offset_left = 72.0
+offset_right = 112.0
+offset_bottom = 23.0
+
+[node name="TotalPokemon" type="Node2D" parent="." unique_id=777658286]
+position = Vector2(19, 17)
 
 [node name="Button" type="Button" parent="." unique_id=1208690729]
 offset_left = 1004.0
 offset_top = 3.0
 offset_right = 1137.0
 offset_bottom = 34.0
-text = "Increment State"
+text = "Start Game"
 
-[connection signal="pressed" from="Move UI/Apply Moves" to="." method="_on_apply_moves_pressed"]
+[node name="Round" type="Label" parent="." unique_id=756342642]
+offset_left = -1.0
+offset_top = -2.0
+offset_right = 63.0
+offset_bottom = 21.0
+text = "Round 0"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

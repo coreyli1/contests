@@ -13,8 +13,8 @@ script = ExtResource("1_0kysy")
 
 [node name="MovesGroup" type="GridContainer" parent="." unique_id=1691593694]
 layout_mode = 0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_right = 106.0
+offset_bottom = 127.0
 theme_override_constants/v_separation = 1
 
 [node name="Move 1" type="Button" parent="MovesGroup" unique_id=427624493]
@@ -32,3 +32,39 @@ text = "Move"
 [node name="Move 4" type="Button" parent="MovesGroup" unique_id=549089519]
 layout_mode = 2
 text = "Move"
+
+[node name="Container" type="Control" parent="." unique_id=178418439]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MoveLabel1" type="Label" parent="Container" unique_id=1688859292]
+visible = false
+layout_mode = 0
+offset_left = 52.0
+offset_right = 157.0
+offset_bottom = 31.0
+
+[node name="MoveLabel2" type="Label" parent="Container" unique_id=1586205010]
+visible = false
+layout_mode = 0
+offset_left = 53.0
+offset_top = 32.0
+offset_right = 161.0
+offset_bottom = 63.0
+
+[node name="MoveLabel3" type="Label" parent="Container" unique_id=84750730]
+visible = false
+layout_mode = 0
+offset_left = 52.0
+offset_top = 65.0
+offset_right = 163.0
+offset_bottom = 95.0
+
+[node name="MoveLabel4" type="Label" parent="Container" unique_id=958144571]
+visible = false
+layout_mode = 0
+offset_left = 52.0
+offset_top = 95.0
+offset_right = 164.0
+offset_bottom = 127.0

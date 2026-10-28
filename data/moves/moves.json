@@ -1,47 +1,47 @@
 {
-	"bite":{
-		"name":"Bite",
-		"appeal": 5,
+	"rest":{
+		"name":"Rest",
+		"appeal": 2,
 		"jam": 0,
 		"status": "",
-		"type": 0,
-		"description": "",
+		"type": 2,
+		"description": "Can avoid being startled by others once.",
 		"rarity": 0		
 	},
-	"growl": {
+	"growl":{
 		"name":"Growl",
+		"appeal": 1,
+		"jam": 0,
+		"status": "",
+		"type": 2,
+		"description": "The appeal works great if used last",
+		"rarity": 0		
+	},
+	"tailwhip": {
+		"name":"Tail Whip",
 		"appeal": 2,
 		"jam": 0,
 		"status": "",
 		"type": 0,
-		"description": "",
+		"description": "The appeal works great if performed last.",
 		"rarity": 0				
 	},
-	"fireblast": {
-		"name":"Fire Blast",
-		"appeal": 8,
+	"facade":{
+		"name":"Facade",
+		"appeal": 2,
 		"jam": 0,
 		"status": "",
 		"type": 0,
-		"description": "",
+		"description": "The appeal works great if performed last.",
 		"rarity": 0				
 	},
-	"selfdestruct": {
-		"name":"Self-Destruct",
-		"appeal": 20,
+	"covet": {
+		"name":"Covet",
+		"appeal": 1,
 		"jam": 0,
 		"status": "",
 		"type": 0,
-		"description": "",
-		"rarity": 0				
-	},
-	"attract": {
-		"name":"Attract",
-		"appeal": 5,
-		"jam": 0,
-		"status": "",
-		"type": 0,
-		"description": "",
+		"description": "Makes the appeal as good as those before it.",
 		"rarity": 0				
 	},
 	"bubble": {
@@ -53,58 +53,49 @@
 		"description": "",
 		"rarity": 0				
 	},
-	"cottonguard": {
-		"name":"Cotton Guard",
-		"appeal": 5,
+	"protect": {
+		"name":"Protect",
+		"appeal": 1,
 		"jam": 0,
 		"status": "",
 		"type": 0,
-		"description": "",
+		"description": "Can avoid being startled by others.",
 		"rarity": 0				
-	},
-	"growl": {
-		"name":"Self-Destruct",
-		"appeal": 5,
+	},		
+	"watergun":{
+		"name":"Water Gun",
+		"appeal": 4,
 		"jam": 0,
 		"status": "",
-		"type": 0,
-		"description": "",
-		"rarity": 0				
+		"type": 2,
+		"description": "A highly appealing move",
+		"rarity": 0		
 	},
-	"growl": {
-		"name":"Self-Destruct",
-		"appeal": 5,
+	"sweetscent":{
+		"name":"Sweet Scent",
+		"appeal": 1,
+		"jam": 3,
+		"status": "",
+		"type": 2,
+		"description": "Badly startles those that have made appeals",
+		"rarity": 0		
+	},
+	"tackle":{
+		"name":"Tackle",
+		"appeal": 4,
 		"jam": 0,
 		"status": "",
-		"type": 0,
-		"description": "",
-		"rarity": 0					
+		"type": 4,
+		"description": "A highly appealing move",
+		"rarity": 0		
 	},
-	"growl": {
-		"name":"Self-Destruct",
-		"appeal": 5,
-		"jam": 0,
+	"leechseed":{
+		"name":"Leech Seed",
+		"appeal": 2,
+		"jam": 2,
 		"status": "",
 		"type": 0,
-		"description": "",
-		"rarity": 0				
-	},
-	"growl": {
-		"name":"Self-Destruct",
-		"appeal": 5,
-		"jam": 0,
-		"status": "",
-		"type": 0,
-		"description": "",
-		"rarity": 0					
-	},
-	"growl": {
-		"name":"Self-Destruct",
-		"appeal": 5,
-		"jam": 0,
-		"status": "",
-		"type": 0,
-		"description": "",
-		"rarity": 0				
+		"description": "Startles all Pokémon that have done their appeals.",
+		"rarity": 0		
 	},
 }

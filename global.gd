@@ -38,14 +38,27 @@ func _ready() -> void:
 	# use that random seed to select random pokemon
 	# use that random seed to select random moves for pokemon
 
+	#json_to_move_resource()
+	
+
+
+#func json_to_move_resource() -> void:
+	#for m in move_data:
+		#var savepath = "res://data/moves/cute_moves/" + m + ".tres"
+		#var move_res = move.new()
+		#
+		#move_res.name = move_data[m].name
+		#move_res.appeal = move_data[m].appeal
+		#move_res.description = move_data[m].description
+		#move_res.jam = move_data[m].jam
+		#move_res.type = move_data[m].type
+		#ResourceSaver.save(move_res, savepath)
 
 
 
-func start_turn() -> void:
-	# if its the player turn
-	if turn_order[turn].current:
-		pass
-	pass
-# indicates when an ai or players ends turn
-#func end_turn() -> void:
-	#pass
+
+#0 Cool
+#1 Beauty
+#2 Cute
+#3 Clever
+#4 Tough

@@ -5,6 +5,8 @@ var pokemon_name: String = "Pokemon"
 var attribute: String = "CUTE"
 var moves: Array[String]
 var current: bool = false
+var total_appeal: int
+var turn_order: int
 
 @onready var poke_name: Label = %PokeName
 @onready var move_used: Label = %MoveUsed
@@ -16,19 +18,6 @@ var current: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
-
-	#set label to be the pokemon_name
-	#poke_name.text = pokemon_name
-	
-	#get moves and add it to each button
-	#var count = 0
-	#for m in moves_group.get_children():
-		#print(m)
-		#print(moves)
-		#print(moves[count])
-		#m.text = moves[count]
-		#count+=1		
 	pass
 
 
@@ -36,10 +25,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func set_variables() -> void:
+func set_variables(turn: int) -> void:
 	#set label to be the pokemon_name
 	poke_name.text = pokemon_name
-	
+	turn_order = turn
 	#get moves and add it to each button
 
 	if current:
@@ -47,11 +36,16 @@ func set_variables() -> void:
 		pass
 		
 		
-
-func generate_hearts(m: String) -> void:
+func play_turn(m: String) -> void:
+	var appeal = Global.move_data[m]["appeal"]
+	total_appeal += appeal
+	await generate_hearts(appeal)
+	Global.end_turn.emit()
+	
+func generate_hearts(appeal: int) -> void:
 	
 	var xpos = 0
-	for i in Global.move_data[m]["appeal"]:
+	for i in appeal:
 		var heart = Sprite2D.new()
 		heart.apply_scale(Vector2(.1,.1))
 		heart.texture = preload("uid://bjb6kjsv4qmye")
@@ -62,5 +56,3 @@ func generate_hearts(m: String) -> void:
 		hearts.add_child(heart)
 	
 	
-	#end turn for testing
-	Global.end_turn.emit()

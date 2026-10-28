@@ -2,7 +2,22 @@
 	"mudkip": {
 		"name": "Mudkip",
 		"attribute": "cute",
-		"moves":  ["bite", "growl", "fireblast", "selfdestruct"]		
+		"moves":  ["watergun", "growl", "protect", "tackle"]		
+	},
+	"bulbasaur":{
+		"name": "Bulbasaur",
+		"attribute": "cute",
+		"moves":  ["leechseed", "tackle", "growl", "sweetscent"]
+	},
+	"zigzagoon":{
+		"name": "Bulbasaur",
+		"attribute": "cute",
+		"moves":  ["rest", "tackle", "tailwhip","covet"]
+	},
+	"illumise":{
+		"name": "Illumise",
+		"attribute": "cute",
+		"moves":  ["rest", "tackle", "facade","covet"]
 	},
 	"diglett":{
 		"name": "Diglett",
@@ -28,5 +43,6 @@
 		"name": "Empoleon",
 		"attribute": "cute",
 		"moves":  ["bite", "growl", "fireblast", "selfdestruct"]
-	}
+	},
+
 }

@@ -5,6 +5,7 @@ class_name move extends Resource
 @export var jam : int
 @export var status : String
 @export var description : String
+@export var type: int
 @export var rarity : int
 
 # Called when the node enters the scene tree for the first time.

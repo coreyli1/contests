@@ -3,18 +3,22 @@ extends Node2D
 var enemy_pokemon
 var enemy_current_move
 var state: String
+var round: int = 0
 
 @onready var game_state: Label = $GameState
 @onready var total_pokemon: Node2D = $TotalPokemon
+@onready var moves: Control = %Moves
+@onready var round_label: Label = $Round
 
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:	
-
+func _ready() -> void:
+	generate_pokemon()
+	pass
 
 	#initiate turn structure
-	start_round()
+	
 	#generate_pokemon()	
 	#for i in range(4):
 		#await get_tree().create_timer(3.0).timeout
@@ -29,9 +33,10 @@ func _ready() -> void:
 func start_round():
 	#change the turn order based on specific requirements
 	#random for now
-	Global.turn_order.shuffle()	
 	#rerender the scene
-	generate_pokemon()
+	round += 1
+	round_label.text = "Round " + str(round)
+	
 	if Global.turn_order[Global.turn] == Global.current_pokemon:
 		player_turn()
 	else:
@@ -47,23 +52,31 @@ func _on_apply_moves_pressed() -> void:
 #appeal
 
 #add pokemon created in the global scene and sets their variables
-func generate_pokemon() ->void:
+func generate_pokemon() -> void:
 	var ypos = 50
-	for i in Global.turn_order:
-		i.position.y += ypos
-		total_pokemon.add_child(i)
-		i.set_variables()
+	for i in Global.turn_order.size():
+		var poke = Global.turn_order[i]
+		poke.position.y += ypos
+		total_pokemon.add_child(poke)
+		poke.set_variables(i)
 		ypos+= 50
 		
 
 
 func _on_button_pressed() -> void:
-	state = "Turn"
+	start_round()
 
 func ai_turn() -> void:
 	print(Global.turn_order[Global.turn].pokemon_name, " played")
-	#need to await a signal thats finished
-	play_ai_turn(Global.turn_order[Global.turn], randi()%4)
+
+
+	var ai_poke = Global.turn_order[Global.turn]
+	var ai_move = ai_poke.moves[randi()%4]
+	var text: String = Global.turn_order[Global.turn].pokemon_name + " played " + ai_move
+	game_state.text = text	
+	ai_poke.play_turn(ai_move)
+	
+	#await turn finishing
 	await Global.end_turn
 	transition_turn()
 
@@ -80,18 +93,15 @@ func transition_turn() -> void:
 	else:
 		ai_turn()
 	
-	pass
-
-#poke is the ai pokemon
-#r is to randomly decide the move
-func play_ai_turn(poke: Pokemon, r: int) -> void:
-	poke.generate_hearts(poke.moves[r])
 
 func player_turn():
 	print("Player played a turn")
+	game_state.text = "Player's turn"
+	moves.visible = true
 	#display move menu
 	#wait for move menu
 	await Global.end_turn
+	moves.visible = false
 	transition_turn()
 
 
@@ -100,5 +110,14 @@ func end_round() -> void:
 	# calculate score
 	# calculate order priority
 	# increment round counter
+	
+	# reset the state
+	Global.turn = 0
 	# call next round
+	await get_tree().create_timer(4).timeout
+	if round == 2:
+		game_state.text = "GAMEOVER " + "you have " + str(Global.current_pokemon.total_appeal) + " total appeal."
+	else:
+		start_round()
+	
 	pass

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="move" format=3 uid="uid://0lhwryrieev3"]
+
+[ext_resource type="Script" uid="uid://cjdksxtvcs2fh" path="res://data/moves/move.gd" id="1_ruco1"]
+
+[resource]
+script = ExtResource("1_ruco1")
+name = "Attract"
+appeal = 5

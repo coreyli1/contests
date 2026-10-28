@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="move" format=3 uid="uid://n3a5jyxukb2x"]
+
+[ext_resource type="Script" uid="uid://cjdksxtvcs2fh" path="res://data/moves/move.gd" id="1_vpoci"]
+
+[resource]
+script = ExtResource("1_vpoci")
+name = "Fire Blast"
+appeal = 8
+description = "FIREEEEEEEEEEEEE"
