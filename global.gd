@@ -3,6 +3,7 @@ var current_pokemon
 var current_move
 var turn_order : Array[Pokemon]
 var turn: int = 0
+var type_round: int
 
 const MOVES = preload("res://data/moves/moves.json")
 var move_data : Dictionary
@@ -14,7 +15,11 @@ signal end_turn
 func _ready() -> void:
 	print("Move Data Created")
 	move_data = MOVES.data
-
+	
+	#type_round = randi()%5-1
+	#manually setting the type of contest to be a cute contest
+	type_round = 2
+	
 	#print("Pokemon")
 	#for item in POKEMON.data:
 		#print(item)
