@@ -14,21 +14,8 @@ var round: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	generate_pokemon()
-	pass
-
-	#initiate turn structure
 	
-	#generate_pokemon()	
-	#for i in range(4):
-		#await get_tree().create_timer(3.0).timeout
-		#if Global.turn_order[i].current:
-			#print("Player's Turn")
-			#await $"Move UI/Apply Moves".button_up
-			#pass
-		#else:
-			#print("Player " + str(i+1) + "'s turn" )
-			#await play_ai_turn(Global.turn_order[i], randi()%4)
+	pass
 
 func start_round():
 	#change the turn order based on specific requirements
@@ -36,7 +23,7 @@ func start_round():
 	#rerender the scene
 	round += 1
 	round_label.text = "Round " + str(round)
-	
+	generate_pokemon()
 	if Global.turn_order[Global.turn] == Global.current_pokemon:
 		player_turn()
 	else:
@@ -56,10 +43,12 @@ func generate_pokemon() -> void:
 	var ypos = 50
 	for i in Global.turn_order.size():
 		var poke = Global.turn_order[i]
-		poke.position.y += ypos
+		
+		poke.position.y = ypos
+		ypos+= 50
 		total_pokemon.add_child(poke)
 		poke.set_variables(i)
-		ypos+= 50
+		
 		
 
 
@@ -67,12 +56,13 @@ func _on_button_pressed() -> void:
 	start_round()
 
 func ai_turn() -> void:
-	print(Global.turn_order[Global.turn].pokemon_name, " played")
+	
 
 
 	var ai_poke = Global.turn_order[Global.turn]
 	var ai_move = ai_poke.moves[randi()%4]
 	var text: String = Global.turn_order[Global.turn].pokemon_name + " played " + ai_move
+	print(text)
 	game_state.text = text	
 	ai_poke.play_turn(ai_move)
 	
@@ -81,8 +71,9 @@ func ai_turn() -> void:
 	transition_turn()
 
 func transition_turn() -> void:
-	print(Global.turn)
-	print(Global.turn_order[Global.turn])
+	
+	await get_tree().create_timer(2).timeout
+	print(Global.turn_order[Global.turn].name)
 	Global.turn += 1
 	if Global.turn == 4:
 		end_round()
@@ -112,7 +103,11 @@ func end_round() -> void:
 	# increment round counter
 	
 	# reset the state
+	#remove everything in total_pokemon
+	for child in total_pokemon.get_children():
+		total_pokemon.remove_child(child)
 	Global.turn = 0
+	Global.turn_order.shuffle()
 	# call next round
 	await get_tree().create_timer(4).timeout
 	if round == 2:
