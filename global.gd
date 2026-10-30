@@ -44,9 +44,9 @@ func _ready() -> void:
 	# use that random seed to select random moves for pokemon
 
 	#json_to_move_resource()
-	
-
-
+	#
+#
+#
 #func json_to_move_resource() -> void:
 	#for m in move_data:
 		#var savepath = "res://data/moves/cute_moves/" + m + ".tres"

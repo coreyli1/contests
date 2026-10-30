@@ -13,11 +13,12 @@ config_version=5
 config/name="contests"
 run/main_scene="uid://f7g2omgrjmm"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://assets/icon.svg"
 
 [autoload]
 
 Global="*uid://cevlgs0yj8iv"
+Status="*uid://clyf4aymyhdjf"
 
 [physics]
 

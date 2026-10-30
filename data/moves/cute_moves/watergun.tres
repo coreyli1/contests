@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="move" format=3 uid="uid://cod0atsrp2rr0"]
+[gd_resource type="Resource" script_class="move" format=3 uid="uid://c4m475y0u28bj"]
 
 [ext_resource type="Script" uid="uid://cjdksxtvcs2fh" path="res://data/moves/move.gd" id="1_20oct"]
 
@@ -7,3 +7,4 @@ script = ExtResource("1_20oct")
 name = "Water Gun"
 appeal = 4
 description = "A highly appealing move"
+type = 2

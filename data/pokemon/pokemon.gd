@@ -7,6 +7,8 @@ var moves: Array[String]
 var current: bool = false
 var total_appeal: int
 var turn_order: int
+var current_appeal: int
+var current_jam: int
 
 @onready var poke_name: Label = %PokeName
 @onready var move_used: Label = %MoveUsed
@@ -37,9 +39,13 @@ func set_variables(turn: int) -> void:
 		
 		
 func play_turn(m: String) -> void:
-	var appeal = Global.move_data[m]["appeal"]
-	total_appeal += appeal
-	await generate_hearts(appeal)
+	current_appeal = Global.move_data[m]["appeal"]
+	current_jam = Global.move_data[m]["jam"]
+	var status = Global.move_data[m]["status"]
+	match_status(status)
+
+	total_appeal += current_appeal
+	await generate_hearts(current_appeal)
 	Global.end_turn.emit()
 	
 func generate_hearts(appeal: int) -> void:
@@ -55,4 +61,7 @@ func generate_hearts(appeal: int) -> void:
 		await get_tree().create_timer(.2).timeout
 		hearts.add_child(heart)
 	
-	
+func match_status(status: String)->void:
+	match status:
+		"last":
+			current_appeal = Status.last(self, current_appeal)	

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="move" format=3]
+
+[ext_resource type="Script" path="res://data/moves/move.gd" id="1_7gd8p"]
+
+[resource]
+script = ExtResource("1_7gd8p")
+name = "Leech Seed"
+appeal = 2
+jam = 2
+description = "Startles all Pokémon that have done their appeals."

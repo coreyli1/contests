@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="move" format=3]
+
+[ext_resource type="Script" path="res://data/moves/move.gd" id="1_8hqb6"]
+
+[resource]
+script = ExtResource("1_8hqb6")
+name = "Rest"
+appeal = 2
+description = "Can avoid being startled by others once."
+type = 2

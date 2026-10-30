@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="move" format=3]
+
+[ext_resource type="Script" path="res://data/moves/move.gd" id="1_w0cjk"]
+
+[resource]
+script = ExtResource("1_w0cjk")
+name = "Covet"
+appeal = 1
+description = "Makes the appeal as good as those before it."

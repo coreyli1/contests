@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="move" format=3 uid="uid://bmpndbsekyyr7"]
-
-[ext_resource type="Script" uid="uid://cjdksxtvcs2fh" path="res://data/moves/move.gd" id="1_ihlpp"]
-
-[resource]
-script = ExtResource("1_ihlpp")
-name = "Self-Destruct"
-appeal = 10
-description = "BOOOOOOOOOOOOOOOm"

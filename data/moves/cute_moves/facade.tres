@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="move" format=3]
+
+[ext_resource type="Script" path="res://data/moves/move.gd" id="1_j620t"]
+
+[resource]
+script = ExtResource("1_j620t")
+name = "Facade"
+appeal = 2
+description = "The appeal works great if performed last."
