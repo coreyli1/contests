@@ -2,17 +2,16 @@ extends Control
 
 var moves_added : bool = false
 var moves : Array[String]
-@onready var moves_group: GridContainer = $MovesGroup
-@onready var move_1: Button = $"MovesGroup/Move 1"
-@onready var move_2: Button = $"MovesGroup/Move 2"
-@onready var move_3: Button = $"MovesGroup/Move 3"
-@onready var move_4: Button = $"MovesGroup/Move 4"
+@onready var moves_group: VBoxContainer = %MovesGroup
+@onready var move_1: Button = %"Move 1"
+@onready var move_2: Button = %"Move 2"
+@onready var move_3: Button = %"Move 3"
+@onready var move_4: Button = %"Move 4"
 
-@onready var move_label_1: Label = $Container/MoveLabel1
-@onready var move_label_2: Label = $Container/MoveLabel2
-@onready var move_label_3: Label = $Container/MoveLabel3
-@onready var move_label_4: Label = $Container/MoveLabel4
 
+@onready var appeal: Label = %Appeal
+@onready var jam: Label = %Jam
+@onready var move_qual: Label = %MoveQual
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,7 +19,6 @@ func _ready() -> void:
 	moves.append_array(Global.current_pokemon.moves)
 	var count = 0
 	for m in moves_group.get_children():
-		print(moves[count])
 		m.text = Global.move_data[moves[count]].name
 		count+=1	
 		
@@ -30,17 +28,19 @@ func _ready() -> void:
 	move_3.pressed.connect(button_pressed.bind(2))
 	move_4.pressed.connect(button_pressed.bind(3))
 	
+	move_1.grab_focus.call_deferred()
+	move_2.grab_focus.call_deferred()
+	move_3.grab_focus.call_deferred()
+	move_4.grab_focus.call_deferred()
+	
+	create_quant()
 	create_description()
 	
-	move_1.mouse_entered.connect(show_hover_text.bind(1))
-	move_2.mouse_entered.connect(show_hover_text.bind(2))
-	move_3.mouse_entered.connect(show_hover_text.bind(3))
-	move_4.mouse_entered.connect(show_hover_text.bind(4))
+	move_1.focus_entered.connect(set_move_description.bind(0))
+	move_2.focus_entered.connect(set_move_description.bind(1))
+	move_3.focus_entered.connect(set_move_description.bind(2))
+	move_4.focus_entered.connect(set_move_description.bind(3))
 	
-	move_1.mouse_exited.connect(hide_hover_text.bind(1))
-	move_2.mouse_exited.connect(hide_hover_text.bind(2))
-	move_3.mouse_exited.connect(hide_hover_text.bind(3))
-	move_4.mouse_exited.connect(hide_hover_text.bind(4))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -52,42 +52,14 @@ func button_pressed(m: int):
 	Global.current_move = moves[m]
 	Global.current_pokemon.play_turn(Global.current_move)
 
-func show_hover_text(i: int):
-	match i:
-		1:
-			move_label_1.visible = true
-		2:
-			move_label_2.visible = true
-		3:
-			move_label_3.visible = true
-		4:
-			move_label_4.visible = true	
-
-func hide_hover_text(i: int):
-	match i:
-		1:
-			move_label_1.visible = false
-		2:
-			move_label_2.visible = false
-		3:
-			move_label_3.visible = false
-		4:
-			move_label_4.visible = false	
+func create_quant() -> void:
+	appeal.text = "Appeal: " + str(Global.move_data[moves[0]].appeal)
+	jam.text = "Jam: " + str(Global.move_data[moves[0]].jam)
 func create_description() -> void:
+	move_qual.text = Global.move_data[moves[0]].description
 	print("create description")
-	for i in moves.size():
-		print(Global.move_data[moves[i]].description)
 
-		match i+1:
-			1:
-				move_label_1.text = Global.move_data[moves[i]].description
-			2:
-				move_label_2.text = Global.move_data[moves[i]].description
-			3:
-				move_label_3.text = Global.move_data[moves[i]].description
-			4:
-				move_label_4.text = Global.move_data[moves[i]].description
-
-
-
-	
+func set_move_description(m: int) -> void:
+	appeal.text = "Appeal: " + str(Global.move_data[moves[m]].appeal)
+	jam.text = "Jam: " + str(Global.move_data[moves[m]].jam)
+	move_qual.text = Global.move_data[moves[m]].description	

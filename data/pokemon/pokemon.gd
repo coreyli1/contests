@@ -75,6 +75,7 @@ func generate_hearts(appeal: int) -> void:
 		xpos += 50
 		await get_tree().create_timer(.4).timeout
 		hearts.add_child(heart)
+	# need to check if generated haearts works when current appeal is 0
 	print("generated hearts")
 func match_status(status: String)->void:
 	match status:

@@ -9,6 +9,7 @@ var round: int = 0
 @onready var total_pokemon: Node2D = $TotalPokemon
 @onready var moves: Control = %Moves
 @onready var round_label: Label = $Round
+@onready var button: Button = $Button
 
 
 
@@ -89,6 +90,8 @@ func player_turn():
 	print("Player played a turn")
 	game_state.text = "Player's turn"
 	moves.visible = true
+	button.release_focus()
+	moves.move_1.grab_focus()
 	#display move menu
 	#wait for move menu
 	await Global.end_turn
