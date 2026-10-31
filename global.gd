@@ -4,7 +4,7 @@ var current_move
 var turn_order : Array[Pokemon]
 var turn: int = 0
 var contest_type: int
-
+var max_voltage: bool = false
 
 const MOVES = preload("res://data/moves/moves.json")
 var move_data : Dictionary

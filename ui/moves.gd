@@ -55,6 +55,7 @@ func button_pressed(m: int):
 func create_quant() -> void:
 	appeal.text = "Appeal: " + str(Global.move_data[moves[0]].appeal)
 	jam.text = "Jam: " + str(Global.move_data[moves[0]].jam)
+
 func create_description() -> void:
 	move_qual.text = Global.move_data[moves[0]].description
 	print("create description")

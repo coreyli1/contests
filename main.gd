@@ -1,7 +1,5 @@
 extends Node2D
 
-var enemy_pokemon
-var enemy_current_move
 var state: String
 var round: int = 0
 
@@ -73,6 +71,7 @@ func ai_turn() -> void:
 	#await turn finishing
 	print("wait for ai turn to stop playing")
 	await Global.end_turn
+	print("ai finished turn")
 	#if the move is the same as the current contest, then add an applause
 	if Global.move_data[ai_move].type == Global.contest_type:
 		voltage.add_applause()	
@@ -80,6 +79,9 @@ func ai_turn() -> void:
 		voltage.remove_applause()
 	#just add applause for testing right now
 	
+	if voltage.check_applause():
+		await ai_poke.generate_hearts(ai_poke.current_appeal+5)
+		Global.turn_order[Global.turn].total_appeal += 5
 	transition_turn()
 
 func transition_turn() -> void:
@@ -108,11 +110,14 @@ func player_turn():
 
 	await Global.end_turn
 	moves.visible = false
+	
 	if Global.move_data[Global.current_pokemon.previous_move].type == Global.contest_type:
 		voltage.add_applause()	
 	else:
 		voltage.remove_applause()
-	
+	if voltage.check_applause():
+		await Global.current_pokemon.generate_hearts(Global.current_pokemon.current_appeal+5)
+		Global.turn_order[Global.turn].total_appeal += 5
 	transition_turn()
 
 
@@ -129,10 +134,19 @@ func end_round() -> void:
 	Global.turn = 0
 	Global.turn_order.shuffle()
 	# call next round
-	await get_tree().create_timer(4).timeout
-	if round == 2:
-		game_state.text = "GAMEOVER " + "you have " + str(Global.current_pokemon.total_appeal) + " total appeal."
+	await get_tree().create_timer(2).timeout
+	if round == 1:
+		game_state.text = str(calculate_appeal()) + " has won the game!"
 	else:
 		start_round()
 	
 	pass
+
+func calculate_appeal():
+	var appeals: Array[int]
+	for poke in Global.turn_order:
+		appeals.append(poke.total_appeal)
+		
+	
+	return Global.turn_order[appeals.find(appeals.max())].pokemon_name
+	
