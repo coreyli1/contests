@@ -10,6 +10,7 @@ var round: int = 0
 @onready var moves: Control = %Moves
 @onready var round_label: Label = $Round
 @onready var button: Button = $Button
+@onready var voltage: VBoxContainer = $Voltage
 
 
 
@@ -62,12 +63,18 @@ func ai_turn() -> void:
 
 	var ai_poke = Global.turn_order[Global.turn]
 	var ai_move = ai_poke.moves[randi()%4]
+	#if the move is the same as the current contest, then add an applause
+	
+	#just add applause for testing right now
+	voltage.add_applause()
+	
 	var text: String = Global.turn_order[Global.turn].pokemon_name + " played " + ai_move
 	print(text)
 	game_state.text = text	
 	ai_poke.play_turn(ai_move)
 	
 	#await turn finishing
+	print("wait for ai turn to stop playing")
 	await Global.end_turn
 	transition_turn()
 

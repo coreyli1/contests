@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://mn1tswoje67" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://u3scquwc5myr" path="res://ui/moves.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cxiekl1ya3i7r" path="res://ui/voltage.tscn" id="3_h2yge"]
 
 [node name="main" type="Node2D" unique_id=1350547697]
 script = ExtResource("1_0xm2m")
@@ -42,5 +43,16 @@ offset_top = -2.0
 offset_right = 63.0
 offset_bottom = 21.0
 text = "Round 0"
+
+[node name="Voltage" parent="." unique_id=1594203125 instance=ExtResource("3_h2yge")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 532.0
+offset_top = 14.0
+offset_right = 604.0
+offset_bottom = 41.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
