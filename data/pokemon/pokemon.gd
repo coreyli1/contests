@@ -58,25 +58,29 @@ func play_turn(m: String) -> void:
 		else:
 			current_appeal -= 2
 	
-	total_appeal += current_appeal
 	await generate_hearts(current_appeal)
+	total_appeal += current_appeal
 	previous_move = m
 	
 	Global.end_turn.emit()
-	
+	print("generate hearts over")
 func generate_hearts(appeal: int) -> void:
+	
 	if appeal == 0:
-		return
-	var xpos = 0
-	for i in appeal:
-		var heart = Sprite2D.new()
-		heart.apply_scale(Vector2(.1,.1))
-		heart.texture = preload("uid://bjb6kjsv4qmye")
-		heart.position.x += xpos
-
-		xpos += 50
 		await get_tree().create_timer(.4).timeout
-		hearts.add_child(heart)
+		pass
+	else:
+		var xpos = 0
+		for i in appeal:
+			var heart = Sprite2D.new()
+			heart.apply_scale(Vector2(.1,.1))
+			heart.texture = preload("uid://bjb6kjsv4qmye")
+			heart.position.x += xpos
+
+			xpos += 50
+			await get_tree().create_timer(.4).timeout
+			hearts.add_child(heart)
+	print("generate hearts appeal: ",appeal)
 
 func match_status(status: String)->void:
 	match status:
