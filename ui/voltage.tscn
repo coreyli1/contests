@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://cxiekl1ya3i7r"]
 
 [ext_resource type="Script" uid="uid://ce3qwaum6hcp6" path="res://ui/voltage.gd" id="1_qu6fo"]
+[ext_resource type="Texture2D" uid="uid://cjaibvsu17ypu" path="res://assets/voltage empty.png" id="2_60egc"]
 
 [node name="Voltage" type="VBoxContainer" unique_id=1594203125]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -281.5
+offset_top = 9.0
+offset_right = -1029.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qu6fo")
@@ -17,3 +21,34 @@ text = "Applause"
 [node name="Applause" type="HBoxContainer" parent="." unique_id=2062857720]
 unique_name_in_owner = true
 layout_mode = 2
+
+[node name="1" type="TextureRect" parent="Applause" unique_id=1289683465]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("2_60egc")
+
+[node name="2" type="TextureRect" parent="Applause" unique_id=1438051203]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("2_60egc")
+
+[node name="3" type="TextureRect" parent="Applause" unique_id=1489529702]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("2_60egc")
+
+[node name="4" type="TextureRect" parent="Applause" unique_id=868220057]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("2_60egc")
+
+[node name="5" type="TextureRect" parent="Applause" unique_id=804178240]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("2_60egc")
+
+[node name="6" type="TextureRect" parent="Applause" unique_id=963980347]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("2_60egc")
+expand_mode = 2

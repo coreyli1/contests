@@ -61,6 +61,7 @@ func play_turn(m: String) -> void:
 	total_appeal += current_appeal
 	await generate_hearts(current_appeal)
 	previous_move = m
+	
 	Global.end_turn.emit()
 	
 func generate_hearts(appeal: int) -> void:

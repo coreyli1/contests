@@ -63,10 +63,7 @@ func ai_turn() -> void:
 
 	var ai_poke = Global.turn_order[Global.turn]
 	var ai_move = ai_poke.moves[randi()%4]
-	#if the move is the same as the current contest, then add an applause
-	
-	#just add applause for testing right now
-	voltage.add_applause()
+
 	
 	var text: String = Global.turn_order[Global.turn].pokemon_name + " played " + ai_move
 	print(text)
@@ -76,6 +73,13 @@ func ai_turn() -> void:
 	#await turn finishing
 	print("wait for ai turn to stop playing")
 	await Global.end_turn
+	#if the move is the same as the current contest, then add an applause
+	if Global.move_data[ai_move].type == Global.contest_type:
+		voltage.add_applause()	
+	else:
+		voltage.remove_applause()
+	#just add applause for testing right now
+	
 	transition_turn()
 
 func transition_turn() -> void:
@@ -101,8 +105,14 @@ func player_turn():
 	moves.move_1.grab_focus()
 	#display move menu
 	#wait for move menu
+
 	await Global.end_turn
 	moves.visible = false
+	if Global.move_data[Global.current_pokemon.previous_move].type == Global.contest_type:
+		voltage.add_applause()	
+	else:
+		voltage.remove_applause()
+	
 	transition_turn()
 
 
