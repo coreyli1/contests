@@ -97,11 +97,12 @@ func generate_hearts(appeal: int) -> void:
 func apply_jam(jam: int)->void:
 	#get previous pokemon
 	var prev_poke: Pokemon
-	prev_poke.current_appeal -= jam
+	
 	if Global.turn == 0:
 		return
 	else:
 		prev_poke = Global.turn_order[Global.turn-1]
+	prev_poke.current_appeal -= jam	
 	var remove = prev_poke.hearts.get_children()
 	for i in jam:
 		print(prev_poke.hearts.get_children())
