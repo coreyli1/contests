@@ -22,7 +22,6 @@ func _process(delta: float) -> void:
 	pass
 
 func add_applause():
-	print("adding applause", applause_array)
 	for i in applause_array.size():
 		print(i)
 		print(applause_array[i])
@@ -47,10 +46,10 @@ func match_applause(i: int):
 		6:
 			return _6
 func remove_applause():
-	print("remove",applause_array)
 	for i in range(applause_array.size()-1,-1,-1):
 		if applause_array[i] == true:
 			match_applause(i+1).texture = preload("uid://cjaibvsu17ypu")
+			applause_array[i] = false
 			return
 
 func check_applause() -> bool:
