@@ -45,10 +45,18 @@ func set_variables(turn: int) -> void:
 		
 		
 func play_turn(m: String) -> void:
+	var status = Global.move_data[m]["status"]	
 	current_appeal = Global.move_data[m]["appeal"]
 	current_jam = Global.move_data[m]["jam"]
-	var status = Global.move_data[m]["status"]
+
 	match_status(status)
+	
+	
+	
+	if current_jam >0:
+		apply_jam(current_jam)
+	
+	
 	
 	# if you use the same move twice in a row unless its a special move, then you lose appeal
 	if m == previous_move:
@@ -60,10 +68,15 @@ func play_turn(m: String) -> void:
 	
 	await generate_hearts(current_appeal)
 	total_appeal += current_appeal
+	
+	
+	
+	
+	
+	
 	previous_move = m
 	
 	Global.end_turn.emit()
-	print("generate hearts over")
 func generate_hearts(appeal: int) -> void:
 	
 	if appeal == 0:
@@ -80,7 +93,27 @@ func generate_hearts(appeal: int) -> void:
 			xpos += 50
 			await get_tree().create_timer(.4).timeout
 			hearts.add_child(heart)
-	print("generate hearts appeal: ",appeal)
+
+func apply_jam(jam: int)->void:
+	#get previous pokemon
+	var prev_poke: Pokemon
+	prev_poke.current_appeal -= jam
+	if Global.turn == 0:
+		return
+	else:
+		prev_poke = Global.turn_order[Global.turn-1]
+	var remove = prev_poke.hearts.get_children()
+	for i in jam:
+		print(prev_poke.hearts.get_children())
+		if remove.size() == 0:
+			break
+		var to_remove = remove.pop_back()
+		to_remove.queue_free()
+		print(prev_poke.hearts.get_children())
+	
+	print("jam applied")
+		
+	pass
 
 func match_status(status: String)->void:
 	match status:
