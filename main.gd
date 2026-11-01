@@ -87,7 +87,7 @@ func ai_turn() -> void:
 func transition_turn() -> void:
 	
 	await get_tree().create_timer(2).timeout
-	print(Global.turn_order[Global.turn].name)
+
 	Global.turn += 1
 	if Global.turn == 4:
 		end_round()
@@ -132,10 +132,10 @@ func end_round() -> void:
 	for child in total_pokemon.get_children():
 		total_pokemon.remove_child(child)
 	Global.turn = 0
-	Global.turn_order.shuffle()
+	Global.turn_algo()
 	# call next round
 	await get_tree().create_timer(2).timeout
-	if round == 1:
+	if round == 4:
 		game_state.text = str(calculate_appeal()) + " has won the game!"
 	else:
 		start_round()
@@ -146,7 +146,5 @@ func calculate_appeal():
 	var appeals: Array[int]
 	for poke in Global.turn_order:
 		appeals.append(poke.total_appeal)
-		
-	
 	return Global.turn_order[appeals.find(appeals.max())].pokemon_name
 	
