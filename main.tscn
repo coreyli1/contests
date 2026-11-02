@@ -1,58 +1,9 @@
-[gd_scene format=3 uid="uid://f7g2omgrjmm"]
+[gd_scene format=3 uid="uid://dkmn2qlq7pmh7"]
 
-[ext_resource type="Script" uid="uid://mn1tswoje67" path="res://main.gd" id="1_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://u3scquwc5myr" path="res://ui/moves.tscn" id="2_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://cxiekl1ya3i7r" path="res://ui/voltage.tscn" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://bcscf60xnvcvt" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cf8fnq463x7gu" path="res://ui/mainmenu.tscn" id="2_0xm2m"]
 
-[node name="main" type="Node2D" unique_id=1350547697]
+[node name="Main" type="Node2D" unique_id=1567717748]
 script = ExtResource("1_0xm2m")
 
-[node name="Move UI" type="Control" parent="." unique_id=909558126]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Moves" parent="Move UI" unique_id=1078494440 instance=ExtResource("2_0xm2m")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-offset_left = 354.0
-offset_top = 441.0
-offset_right = 354.0
-offset_bottom = 441.0
-
-[node name="GameState" type="Label" parent="." unique_id=538964274]
-offset_left = 72.0
-offset_right = 112.0
-offset_bottom = 23.0
-
-[node name="TotalPokemon" type="Node2D" parent="." unique_id=777658286]
-position = Vector2(19, 17)
-
-[node name="Button" type="Button" parent="." unique_id=1208690729]
-offset_left = 1004.0
-offset_top = 3.0
-offset_right = 1137.0
-offset_bottom = 34.0
-text = "Start Game"
-
-[node name="Round" type="Label" parent="." unique_id=756342642]
-offset_left = -1.0
-offset_top = -2.0
-offset_right = 63.0
-offset_bottom = 21.0
-text = "Round 0"
-
-[node name="Voltage" parent="." unique_id=1594203125 instance=ExtResource("3_h2yge")]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 532.0
-offset_top = 14.0
-offset_right = 604.0
-offset_bottom = 41.0
-grow_horizontal = 1
-grow_vertical = 1
-
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="Mainmenu" parent="." unique_id=1137968224 instance=ExtResource("2_0xm2m")]

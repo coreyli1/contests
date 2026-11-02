@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cxiekl1ya3i7r"]
 
-[ext_resource type="Script" uid="uid://ce3qwaum6hcp6" path="res://ui/voltage.gd" id="1_qu6fo"]
+[ext_resource type="Script" uid="uid://ce3qwaum6hcp6" path="res://ui/contest/voltage.gd" id="1_qu6fo"]
 [ext_resource type="Texture2D" uid="uid://cjaibvsu17ypu" path="res://assets/voltage empty.png" id="2_60egc"]
 
 [node name="Voltage" type="VBoxContainer" unique_id=1594203125]

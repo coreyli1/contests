@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://u3scquwc5myr"]
 
-[ext_resource type="Script" uid="uid://dhpi4lprnn1i5" path="res://ui/moves.gd" id="1_0kysy"]
+[ext_resource type="Script" uid="uid://dhpi4lprnn1i5" path="res://ui/contest/moves.gd" id="1_0kysy"]
 
 [node name="Moves" type="Control" unique_id=1078494440]
 layout_mode = 3

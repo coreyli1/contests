@@ -52,16 +52,14 @@ func turn_algo():
 	var temp = []
 	for poke in turn_order:
 		temp.append([poke.current_appeal, poke])
-	print(temp)
 	temp.sort()
 	temp.reverse()
-	print(temp)
+
 	turn_order = []
 	for t in temp:
-		print(t)
-		print(t[1])
+
 		turn_order.append(t[1])
-	print(turn_order)
+
 #func json_to_move_resource() -> void:
 	#for m in move_data:
 		#var savepath = "res://data/moves/cute_moves/" + m + ".tres"

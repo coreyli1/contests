@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://cf8fnq463x7gu"]
+
+[ext_resource type="Script" uid="uid://dchg8n56tu34l" path="res://ui/mainmenu.gd" id="1_016uc"]
+
+[sub_resource type="Theme" id="Theme_0y3v4"]
+Button/font_sizes/font_size = 16
+
+[node name="Mainmenu" type="Node2D" unique_id=1137968224]
+script = ExtResource("1_016uc")
+
+[node name="Title" type="Label" parent="." unique_id=1078170980]
+offset_right = 1152.0
+offset_bottom = 648.0
+rotation = 0.008075247
+theme_override_font_sizes/font_size = 120
+text = "Pokemon Contest"
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1586680707]
+offset_top = 300.0
+offset_right = 1152.0
+offset_bottom = 648.0
+rotation = 0.00010051736
+theme = SubResource("Theme_0y3v4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=350999443]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="CenterContainer/VBoxContainer" unique_id=966162807]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "PLAY"
+
+[node name="settings" type="Button" parent="CenterContainer/VBoxContainer" unique_id=490769211]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "SETTINGS"
+
+[node name="Credits" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1142444928]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "CREDITS"
+
+[node name="quit" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1340869776]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "QUIT"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
