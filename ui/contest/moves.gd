@@ -2,6 +2,9 @@ extends Control
 
 var moves_added : bool = false
 var moves : Array[String]
+
+signal moves_applied
+
 @onready var moves_group: VBoxContainer = %MovesGroup
 @onready var move_1: Button = %"Move 1"
 @onready var move_2: Button = %"Move 2"
@@ -50,8 +53,11 @@ func _process(delta: float) -> void:
 	pass
 
 func button_pressed(m: int):
+	
 	Global.current_move = moves[m]
-	Global.current_pokemon.play_turn(Global.current_move)
+	print("button pressed ", Global.current_move)
+	#Global.current_pokemon.play_turn(Global.current_move)
+	moves_applied.emit()
 
 func create_quant() -> void:
 	appeal.text = "Appeal: " + str(Global.move_data[moves[0]].appeal)

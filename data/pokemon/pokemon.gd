@@ -69,6 +69,7 @@ func play_turn(m: String) -> void:
 	await generate_hearts(current_appeal)
 	total_appeal += current_appeal
 	
+	print("generated hearts")
 	
 	
 	

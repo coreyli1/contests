@@ -24,6 +24,11 @@ func start_round():
 	round += 1
 	round_label.text = "Round " + str(round)
 	generate_pokemon()
+	moves.visible = true
+	button.visible = false
+	
+	await moves.moves_applied
+	moves.visible = false
 	if Global.turn_order[Global.turn] == Global.current_pokemon:
 		player_turn()
 	else:
@@ -33,8 +38,6 @@ func start_round():
 
 
 
-func _on_apply_moves_pressed() -> void:
-	Global.current_pokemon.generate_hearts(Global.current_move)
 
 #appeal
 
@@ -102,14 +105,9 @@ func transition_turn() -> void:
 func player_turn():
 	print("Player played a turn")
 	game_state.text = "Player's turn"
-	moves.visible = true
-	button.release_focus()
-	moves.move_1.grab_focus()
-	#display move menu
-	#wait for move menu
-
+	Global.current_pokemon.play_turn(Global.current_move)
 	await Global.end_turn
-	moves.visible = false
+
 	
 	if Global.move_data[Global.current_pokemon.previous_move].type == Global.contest_type:
 		voltage.add_applause()	
