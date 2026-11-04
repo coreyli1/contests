@@ -25,6 +25,7 @@ func start_round():
 	round_label.text = "Round " + str(round)
 	generate_pokemon()
 	moves.visible = true
+	moves.move_1.grab_focus()
 	button.visible = false
 	
 	await moves.moves_applied

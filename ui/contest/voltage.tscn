@@ -46,9 +46,3 @@ texture = ExtResource("2_60egc")
 unique_name_in_owner = true
 layout_mode = 2
 texture = ExtResource("2_60egc")
-
-[node name="6" type="TextureRect" parent="Applause" unique_id=963980347]
-unique_name_in_owner = true
-layout_mode = 2
-texture = ExtResource("2_60egc")
-expand_mode = 2

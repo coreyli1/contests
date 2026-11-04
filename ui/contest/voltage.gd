@@ -1,12 +1,11 @@
 extends VBoxContainer
 @onready var applause: HBoxContainer = %Applause
-var applause_array: Array[bool] = [false,false,false,false,false,false]
+var applause_array: Array[bool] = [false,false,false,false,false]
 @onready var _1: TextureRect = %"1"
 @onready var _2: TextureRect = %"2"
 @onready var _3: TextureRect = %"3"
 @onready var _4: TextureRect = %"4"
 @onready var _5: TextureRect = %"5"
-@onready var _6: TextureRect = %"6"
 
 
 
@@ -43,8 +42,7 @@ func match_applause(i: int):
 			return _4
 		5:
 			return _5
-		6:
-			return _6
+
 func remove_applause():
 	for i in range(applause_array.size()-1,-1,-1):
 		if applause_array[i] == true:
