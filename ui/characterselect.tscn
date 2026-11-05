@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dh8qqfdn4072w"]
+
+[ext_resource type="Script" uid="uid://dtyu6q60fentd" path="res://ui/characterselect.gd" id="1_7vt1i"]
+
+[node name="Characterselect" type="Node2D" unique_id=2004704826]
+script = ExtResource("1_7vt1i")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1736079045]
+offset_left = 231.0
+offset_top = -1.0
+offset_right = 299.0
+offset_bottom = 205.0
+
+[node name="Name" type="LineEdit" parent="VBoxContainer" unique_id=792463550]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "name"
+
+[node name="Appeal" type="LineEdit" parent="VBoxContainer" unique_id=2055436557]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "appeal"
+
+[node name="Jam" type="LineEdit" parent="VBoxContainer" unique_id=598097694]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "jam"
+
+[node name="Status" type="LineEdit" parent="VBoxContainer" unique_id=1500090729]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "status"
+
+[node name="Type" type="LineEdit" parent="VBoxContainer" unique_id=964264450]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "type"
+
+[node name="Description" type="LineEdit" parent="VBoxContainer" unique_id=1762173311]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "type"
+
+[node name="Submit" type="Button" parent="VBoxContainer" unique_id=1999827902]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Submit"
+
+[connection signal="pressed" from="VBoxContainer/Submit" to="." method="_on_submit_pressed"]

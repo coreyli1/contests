@@ -9,13 +9,14 @@ var max_voltage: bool = false
 const MOVES = preload("res://data/moves/moves.json")
 var move_data : Dictionary
 const POKEMON = preload("res://data/pokemon/pokemon.json")
-
+var pokemon_data : Dictionary
 signal end_turn
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print("Move Data Created")
 	move_data = MOVES.data
+	pokemon_data = POKEMON.data
 	
 	#type_round = randi()%5-1
 	#manually setting the type of contest to be a cute contest
