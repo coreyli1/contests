@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 	pass
 
 func create_labels() -> void:
-	var ypos = 50
+	var ypos = 25
 		
 	for d in Global.move_data:
 	
@@ -31,8 +31,8 @@ func create_labels() -> void:
 		add_child(card)
 		card.label_move_name.text = d
 		card.label_type.text = set_type(Global.move_data[d]["type"])
-		card.label_appeal.text = str(Global.move_data[d]["appeal"])
-		card.label_jam.text = str(Global.move_data[d]["jam"])
+		#card.label_appeal.text = str(Global.move_data[d]["appeal"])
+		#card.label_jam.text = str(Global.move_data[d]["jam"])
 		card.label_description.text = Global.move_data[d]["description"]
 
 		card.set_labels(d, Global.move_data[d]["type"], Global.move_data[d]["appeal"], Global.move_data[d]["jam"], Global.move_data[d]["description"])
@@ -59,18 +59,19 @@ func _on_submit_pressed() -> void:
 	print(new_move)
 	Global.move_data[line_name.text] = new_move
 	print(Global.move_data) 
+	print("move added")
 	pass # Replace with function body.
 
 func set_type(t: int)-> String:
 	match t:
 		0:
-			return "Cool"
+			return "COOL"
 		1:
-			return "Beauty"
+			return "BEAUTY"
 		2:
-			return "Cute"
+			return "CUTE"
 		3:
-			return "Clever"
+			return "CLEVER"
 		4:	
-			return "Tough"
+			return "TOUGH"
 	return ""

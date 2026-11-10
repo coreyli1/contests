@@ -1,42 +1,205 @@
 [gd_scene format=3 uid="uid://xessnxm18kj3"]
 
 [ext_resource type="Script" uid="uid://c4bi5urxehguo" path="res://ui/movecard.gd" id="1_ri3ic"]
+[ext_resource type="Texture2D" uid="uid://dswqddcylfcjc" path="res://assets/notfilledinheart.png" id="2_b30bs"]
 
 [node name="MoveCard" type="Node2D" unique_id=375996392]
 script = ExtResource("1_ri3ic")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1113208229]
-alignment = 1
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=42342912]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
 
-[node name="MoveName" type="Label" parent="VBoxContainer2" unique_id=1498099470]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer" unique_id=1113208229]
+layout_mode = 2
+
+[node name="MoveName" type="Label" parent="MarginContainer/VBoxContainer2" unique_id=1498099470]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2" unique_id=468944248]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer2" unique_id=489479350]
 layout_mode = 2
-size_flags_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
 
-[node name="Type" type="Label" parent="VBoxContainer2/HBoxContainer" unique_id=1965584435]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer2/MarginContainer" unique_id=468944248]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Type" type="Label" parent="MarginContainer/VBoxContainer2/MarginContainer/HBoxContainer" unique_id=1965584435]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 24
 text = "CUTE"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2/HBoxContainer" unique_id=57304466]
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/VBoxContainer2/MarginContainer/HBoxContainer" unique_id=2043955910]
 layout_mode = 2
 
-[node name="Appeal" type="Label" parent="VBoxContainer2/HBoxContainer/VBoxContainer" unique_id=1988171412]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer2/MarginContainer/HBoxContainer" unique_id=57304466]
+layout_mode = 2
+
+[node name="AppealContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer2/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1728288469]
+layout_mode = 2
+
+[node name="Appeal" type="Label" parent="MarginContainer/VBoxContainer2/MarginContainer/HBoxContainer/VBoxContainer/AppealContainer" unique_id=1103482789]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 text = "APPEAL"
 
-[node name="Jam" type="Label" parent="VBoxContainer2/HBoxContainer/VBoxContainer" unique_id=769995480]
+[node name="h1" type="TextureRect" parent="MarginContainer/VBoxContainer2/MarginContainer/HBoxContainer/VBoxContainer/AppealContainer" unique_id=1534684278]
 unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_b30bs")
+
+[node name="h2" type="TextureRect" parent="MarginContainer/VBoxContainer2/MarginContainer/HBoxContainer/VBoxContainer/AppealContainer" unique_id=1917538698]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_b30bs")
+
+[node name="h3" type="TextureRect" parent="MarginContainer/VBoxContainer2/MarginContainer/HBoxContainer/VBoxContainer/AppealContainer" unique_id=1910242065]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_b30bs")
+
+[node name="h4" type="TextureRect" parent="MarginContainer/VBoxContainer2/MarginContainer/HBoxContainer/VBoxContainer/AppealContainer" unique_id=97927156]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_b30bs")
+
+[node name="h5" type="TextureRect" parent="MarginContainer/VBoxContainer2/MarginContainer/HBoxContainer/VBoxContainer/AppealContainer" unique_id=2110116698]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_b30bs")
+
+[node name="h6" type="TextureRect" parent="MarginContainer/VBoxContainer2/MarginContainer/HBoxContainer/VBoxContainer/AppealContainer" unique_id=586132629]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_b30bs")
+
+[node name="h7" type="TextureRect" parent="MarginContainer/VBoxContainer2/MarginContainer/HBoxContainer/VBoxContainer/AppealContainer" unique_id=855565623]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_b30bs")
+
+[node name="h8" type="TextureRect" parent="MarginContainer/VBoxContainer2/MarginContainer/HBoxContainer/VBoxContainer/AppealContainer" unique_id=360018491]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_b30bs")
+
+[node name="Jam Container" type="HBoxContainer" parent="MarginContainer/VBoxContainer2/MarginContainer/HBoxContainer/VBoxContainer" unique_id=418680710]
+layout_mode = 2
+
+[node name="Jam" type="Label" parent="MarginContainer/VBoxContainer2/MarginContainer/HBoxContainer/VBoxContainer/Jam Container" unique_id=1344850287]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 text = "JAM"
 
-[node name="Description" type="Label" parent="VBoxContainer2" unique_id=536978161]
+[node name="j1" type="TextureRect" parent="MarginContainer/VBoxContainer2/MarginContainer/HBoxContainer/VBoxContainer/Jam Container" unique_id=474373575]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_b30bs")
+
+[node name="j2" type="TextureRect" parent="MarginContainer/VBoxContainer2/MarginContainer/HBoxContainer/VBoxContainer/Jam Container" unique_id=691241399]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_b30bs")
+
+[node name="j3" type="TextureRect" parent="MarginContainer/VBoxContainer2/MarginContainer/HBoxContainer/VBoxContainer/Jam Container" unique_id=1976458555]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_b30bs")
+
+[node name="j4" type="TextureRect" parent="MarginContainer/VBoxContainer2/MarginContainer/HBoxContainer/VBoxContainer/Jam Container" unique_id=540740870]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_b30bs")
+
+[node name="j5" type="TextureRect" parent="MarginContainer/VBoxContainer2/MarginContainer/HBoxContainer/VBoxContainer/Jam Container" unique_id=201224107]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_b30bs")
+
+[node name="j6" type="TextureRect" parent="MarginContainer/VBoxContainer2/MarginContainer/HBoxContainer/VBoxContainer/Jam Container" unique_id=1910440677]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_b30bs")
+
+[node name="j7" type="TextureRect" parent="MarginContainer/VBoxContainer2/MarginContainer/HBoxContainer/VBoxContainer/Jam Container" unique_id=745574497]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_b30bs")
+
+[node name="j8" type="TextureRect" parent="MarginContainer/VBoxContainer2/MarginContainer/HBoxContainer/VBoxContainer/Jam Container" unique_id=299283830]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_b30bs")
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer2" unique_id=1551752281]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Description" type="Label" parent="MarginContainer/VBoxContainer2/MarginContainer2" unique_id=536978161]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 12
 text = "move description"
