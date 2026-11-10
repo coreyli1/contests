@@ -45,4 +45,19 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Submit"
 
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1692812237]
+offset_top = 152.0
+offset_right = 124.0
+offset_bottom = 192.0
+
+[node name="Previous" type="Button" parent="HBoxContainer" unique_id=369772596]
+layout_mode = 2
+text = "Previous"
+
+[node name="Next" type="Button" parent="HBoxContainer" unique_id=846170616]
+layout_mode = 2
+text = "Next"
+
 [connection signal="pressed" from="VBoxContainer/Submit" to="." method="_on_submit_pressed"]
+[connection signal="pressed" from="HBoxContainer/Previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="HBoxContainer/Next" to="." method="_on_next_pressed"]
