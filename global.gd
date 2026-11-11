@@ -17,6 +17,7 @@ func _ready() -> void:
 	print("Move Data Created")
 	move_data = MOVES.data
 	pokemon_data = POKEMON.data
+
 	
 	#type_round = randi()%5-1
 	#manually setting the type of contest to be a cute contest

@@ -8,7 +8,9 @@ extends Node2D
 @onready var description: LineEdit = %Description
 
 var move_array: Array[MoveCard]
+var poke_array: Array[PokemonCard]
 var current_move: int = 0
+var current_poke: int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	create_labels()
@@ -20,28 +22,33 @@ func _process(delta: float) -> void:
 	pass
 
 func create_labels() -> void:
-	var ypos = 25
+	
 		
 	for d in Global.move_data:
 	
 		#var card = MoveCard.new(d, Global.move_data[d]["type"], Global.move_data[d]["appeal"], Global.move_data[d]["jam"], Global.move_data[d]["description"])
 		var card = preload("res://ui/movecard.tscn").instantiate()
 		move_array.append(card)
-		print(card)
 		add_child(card)
-		card.label_move_name.text = d
-		card.label_type.text = set_type(Global.move_data[d]["type"])
-		#card.label_appeal.text = str(Global.move_data[d]["appeal"])
-		#card.label_jam.text = str(Global.move_data[d]["jam"])
-		card.label_description.text = Global.move_data[d]["description"]
+
 
 		card.set_labels(d, Global.move_data[d]["type"], Global.move_data[d]["appeal"], Global.move_data[d]["jam"], Global.move_data[d]["description"])
-		#card.position.y = ypos
-		#ypos+= 150
 		card.apply_scale(Vector2(.8,.8))
 		card.visible = false
 	
+	for p in Global.pokemon_data:
+		print(Global.pokemon_data[p])
+		
+		var pokemon = preload("res://ui/pokemoncard.tscn").instantiate()
+		poke_array.append(pokemon)
+		add_child(pokemon)
+		
+		pokemon.set_labels(Global.pokemon_data[p]["name"],p, Global.pokemon_data[p]["moves"] )
+		pokemon.position.y = 200
+		pokemon.visible = false	
 	move_array[current_move].visible = true	
+	poke_array[current_poke].visible = true
+	
 func create_move(name: String, appeal: int, jam: int, status: String, type: int, description: String):
 	var new_move = {}
 	new_move["name"] = name
@@ -95,3 +102,21 @@ func _on_next_pressed() -> void:
 	else:
 		current_move += 1
 	move_array[current_move].visible = true
+
+
+func _on_previous_poke_pressed() -> void:
+	poke_array[current_poke].visible = false
+	if current_poke == 0:
+		current_poke = poke_array.size() - 1
+	else:
+		current_poke -= 1
+	poke_array[current_poke].visible = true
+
+
+func _on_next_poke_pressed() -> void:
+	poke_array[current_poke].visible = false
+	if current_poke == poke_array.size() - 1:
+		current_poke = 0
+	else:
+		current_poke += 1
+	poke_array[current_poke].visible = true

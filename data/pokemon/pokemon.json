@@ -10,7 +10,7 @@
 		"moves":  ["leechseed", "tackle", "growl", "sweetscent"]
 	},
 	"zigzagoon":{
-		"name": "Bulbasaur",
+		"name": "Zigzagoon",
 		"attribute": "cute",
 		"moves":  ["rest", "tackle", "tailwhip","covet"]
 	},

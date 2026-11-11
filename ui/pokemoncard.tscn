@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://drhurodn8g2ep"]
+
+[ext_resource type="Script" uid="uid://nj7eacwyxqjo" path="res://ui/pokemoncard.gd" id="1_hs8mw"]
+[ext_resource type="Texture2D" uid="uid://3dwhyek2fpii" path="res://assets/pokemon/mudkip.png" id="1_qlyuj"]
+
+[node name="PokemonCard" type="Node2D" unique_id=263707483]
+script = ExtResource("1_hs8mw")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1029394855]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=1402769141]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer" unique_id=1763201054]
+layout_mode = 2
+
+[node name="Pokemon Name" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer" unique_id=2069087826]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Pokemon Name"
+
+[node name="Sprite" type="TextureRect" parent="PanelContainer/HBoxContainer/VBoxContainer" unique_id=1270181326]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("1_qlyuj")
+stretch_mode = 3
+
+[node name="VSeparator" type="VSeparator" parent="PanelContainer/HBoxContainer" unique_id=328915542]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/HBoxContainer" unique_id=2100727862]
+layout_mode = 2
+
+[node name="Moves2" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer2" unique_id=1661743422]
+layout_mode = 2
+text = "Moves"
+
+[node name="Moves" type="VBoxContainer" parent="PanelContainer/HBoxContainer/VBoxContainer2" unique_id=36566293]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="AddMove" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer2" unique_id=678679352]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Add Move
+"

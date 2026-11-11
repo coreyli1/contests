@@ -6,9 +6,16 @@
 script = ExtResource("1_7vt1i")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1736079045]
-offset_left = 595.0
-offset_right = 663.0
-offset_bottom = 241.0
+custom_minimum_size = Vector2(200, 0)
+propagate_maximum_size = false
+offset_left = 710.0
+offset_top = 1.0
+offset_right = 910.0
+offset_bottom = 242.0
+
+[node name="Move" type="Label" parent="VBoxContainer" unique_id=1901221089]
+layout_mode = 2
+text = "Add a Move"
 
 [node name="Name" type="LineEdit" parent="VBoxContainer" unique_id=792463550]
 unique_name_in_owner = true
@@ -38,7 +45,7 @@ placeholder_text = "type"
 [node name="Description" type="LineEdit" parent="VBoxContainer" unique_id=1762173311]
 unique_name_in_owner = true
 layout_mode = 2
-placeholder_text = "type"
+placeholder_text = "description"
 
 [node name="Submit" type="Button" parent="VBoxContainer" unique_id=1999827902]
 unique_name_in_owner = true
@@ -58,6 +65,21 @@ text = "Previous"
 layout_mode = 2
 text = "Next"
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1252346222]
+offset_top = 393.0
+offset_right = 124.0
+offset_bottom = 433.0
+
+[node name="PreviousPoke" type="Button" parent="HBoxContainer2" unique_id=1931131930]
+layout_mode = 2
+text = "Previous"
+
+[node name="NextPoke" type="Button" parent="HBoxContainer2" unique_id=2128267291]
+layout_mode = 2
+text = "Next"
+
 [connection signal="pressed" from="VBoxContainer/Submit" to="." method="_on_submit_pressed"]
 [connection signal="pressed" from="HBoxContainer/Previous" to="." method="_on_previous_pressed"]
 [connection signal="pressed" from="HBoxContainer/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="HBoxContainer2/PreviousPoke" to="." method="_on_previous_poke_pressed"]
+[connection signal="pressed" from="HBoxContainer2/NextPoke" to="." method="_on_next_poke_pressed"]
